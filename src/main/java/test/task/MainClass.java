@@ -10,17 +10,9 @@ public class MainClass {
 
     public static void main(String[] args) {
         Integer age = 1;
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         Student student = new Student(list, age);
-        System.out.println("hash " + student.hashCode());
-        Map<Student, String> studentHashMap = new HashMap<Student, String>();
+        Map<Student, String> studentHashMap = new HashMap<>();
         studentHashMap.put(student, "Some data");
-        student.setAge(100);
-        list.add("new contact");
-        student.setContacts(list);
-        System.out.println(studentHashMap.get(student));
-        System.out.println(student.getContacts());
-
-        System.out.println("hash " + student.hashCode());
     }
 }
