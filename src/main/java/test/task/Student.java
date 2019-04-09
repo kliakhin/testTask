@@ -28,4 +28,28 @@ public class Student {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Student student = (Student) o;
+
+        if (contacts != null ? !contacts.equals(student.contacts) : student.contacts != null) {
+            return false;
+        }
+        return age != null ? age.equals(student.age) : student.age == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = contacts != null ? contacts.hashCode() : 0;
+        result = 31 * result + (age != null ? age.hashCode() : 0);
+        return result;
+    }
 }
